@@ -1,0 +1,35 @@
+@font-face {
+  font-family: justsignature;
+  src: url('../fonts/justsignature/JustSignature.woff');
+}
+body, html {
+  width: 100%;
+  height: 100%;
+}
+
+#id-card {
+  position: relative;
+  display: none;
+  margin: 23vh 0.5vh 0 0;
+  float: right;
+  width: 45.7vh;
+  height: 27.2vh;
+  padding: 54px 17px 10px 144px;
+  background: url("../images/idcard.png");
+  background-repeat: no-repeat;
+}
+img {
+  position: absolute;
+  left:5 px;
+  top: 5px;
+}
+
+.matricola {
+  margin-left: 13.2vh;
+  margin-top: 3.3vh;
+  color: #fff;
+  font-weight: bolder;
+  font-size: 18px;
+}
+
+/* by utisss.#0672, si ringrazia !Gabri#6212 */
