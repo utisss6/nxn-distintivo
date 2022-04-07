@@ -7,12 +7,10 @@ ui_page 'html/index.html'
 server_script {
 	'@oxmysql/lib/MySQL.lua',
 	'server.lua',
-	'config.lua'
 }
 
 client_script {
 	'client.lua',
-	'config.lua'
 }
 
 files {

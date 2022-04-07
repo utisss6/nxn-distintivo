@@ -19,10 +19,11 @@ end)
 ESX.RegisterUsableItem('distintivo', function(source)
    	local _source  = source
    	local xPlayer  = ESX.GetPlayerFromId(_source)
-	if xPlayer.getJob().name == NXN.JobName then
-		TriggerClientEvent("nxn_usa", source)
+	local matricola = MySQL.Sync.fetchAll('SELECT * FROM users WHERE identifier = @identifier', {['@identifier'] =  xPlayer.identifier})
+	if matricola[1].matricola == nil then
+		xPlayer.showNotification("Non ha una matricola")
 	else
-		xPlayer.showNotification("Non sei un poliziotto")
+		TriggerClientEvent("nxn_usa", source)
 	end
 end)
 

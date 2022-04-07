@@ -22,11 +22,11 @@ RegisterCommand('+chiudimat', function()
 		open = false
 	end
 end)
-if NXN.EnableCommand then
-	RegisterCommand('daimatricola', function()
-		TriggerEvent('nxn_gestione_matricola')
-	end)
-end
+
+RegisterCommand('daimatricola', function()
+	TriggerEvent('nxn_gestione_matricola')
+end)
+
 RegisterNetEvent("nxn_gestione_matricola", function()
 	NXN_DaiMatricola()
 end)
@@ -79,6 +79,7 @@ AddEventHandler('nxn_usa', function()
 			ClearPedSecondaryTask(pp)
 			DeleteObject(prop)
 		else
+			TriggerServerEvent('nxn_sv', GetPlayerServerId(PlayerId()),  GetPlayerServerId(PlayerId()))
 			ESX.ShowNotification('Nessuno vicino')
 		end
 	end
